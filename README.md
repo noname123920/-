@@ -114,13 +114,19 @@ end
 
 **Анализ производной (graph.m):**
 ```matlab
+% Пункт 1: График f'(x) на [a,b]
+a = 0.6; b = 0.8;
+x = a:0.001:b;
+
 f_prime = @(x) 1./(2*sqrt(x+1)) + 1./(x.^2);
-x_range = linspace(0.5, 3.0, 100);
-plot(x_range, f_prime(x_range));
+y_prime = f_prime(x);
+
+figure;
+plot(x, y_prime, 'b', 'LineWidth', 2);
 grid on;
+title('График производной f''(x) на интервале [0.6, 0.8]');
 xlabel('x');
 ylabel('f''(x)');
-title('График производной f''(x)');
 ```
 *Показывает, что f'(x) монотонно убывает на [0.5, 3.0]*
 
