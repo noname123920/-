@@ -152,11 +152,11 @@ epsilon = 1e-4;
 a = 0.5; b = 3.0;
 x0 = 0.6;
 
-M = f_prime(a);  % 1.3090
-m = f_prime(b);  % 0.3519
-alpha = 2 / (M + m);  % 1.2027
-q = (M - m) / (M + m);  % 0.5763
-epsilon0 = ((1 - q) / q) * epsilon;  % 7.356e-5
+M = f_prime(a);  
+m = f_prime(b);  
+alpha = 2 / (M + m);  
+q = (M - m) / (M + m);  
+epsilon0 = ((1 - q) / q) * epsilon;  
 
 x_prev = x0;
 for k = 1:100
