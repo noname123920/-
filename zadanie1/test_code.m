@@ -1,0 +1,31 @@
+x = -5:0, 1:5;
+y = 2*sin(x+pi/3)-((x.^2)/2)+1;
+z = x;
+subplot(1,3,1);
+plot(x,y,x,z, 'blue');
+xlabel ("x");
+ylabel ("y");
+legend('первый');
+grid on;
+
+x = 0:0.1:4;
+y = 2*sin(x+pi/3)-((x.^2)/2)+1;
+z = x;
+fiminus = -sqrt(4*sin(x+pi/3)+2);
+subplot(1,3,2);
+plot(x,y,x,z,x,fiminus, 'red');
+xlabel ("x");
+ylabel ("y");
+legend('отриц');
+grid on;
+
+x = 0:0.01:1;
+y = 2*sin(x+pi/3)-((x.^2)/2)+1;
+z = x;
+fiplus = sqrt(4*sin(x+pi/3)+2);
+subplot(1,3,3);
+plot(x,y,x,z,x,fiplus, 'green');
+xlabel ("x");
+ylabel ("y");
+legend('полож');
+grid on;
