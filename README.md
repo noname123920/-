@@ -135,11 +135,11 @@ ylabel('f''(x)');
 f_prime = @(x) 1./(2*sqrt(x+1)) + 1./(x.^2);
 a = 0.5; b = 3.0;
 
-M = f_prime(a)  % max = 1.3090
-m = f_prime(b)  % min = 0.3519
+M = f_prime(a)  
+m = f_prime(b)  
 
-alpha = 2 / (M + m)  % 1.2027
-q = (M - m) / (M + m)  % 0.5763
+alpha = 2 / (M + m)  
+q = (M - m) / (M + m)  
 ```
 *Вычисляет оптимальные параметры α и q*
 
