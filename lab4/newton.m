@@ -61,16 +61,27 @@ for j = 1:length(x_j)
 end
 fprintf('-------------------------------------------------------------\n');
 
+##xx = linspace(a, b, 200);
+##figure;
+##plot(xx, f(xx), 'k-', xx, P(xx), 'b--', 'LineWidth', 1);
+##hold on;
+##plot(x_nodes, y_nodes, 'ro', 'MarkerSize', 5, 'LineWidth', 1);
+##hold off;
+##grid on;
+##legend('f(x)', 'P_3(x)', 'Узлы', 'Location', 'best');
+##xlabel('x'); ylabel('y');
+
+
+
 xx = linspace(a, b, 200);
 figure;
-plot(xx, f(xx), 'k-', xx, P(xx), 'b--', 'LineWidth', 1);
-hold on;
-plot(x_nodes, y_nodes, 'ro', 'MarkerSize', 5, 'LineWidth', 1);
-hold off;
+plot(xx, f(xx), 'k-', 'LineWidth', 1.2); hold on;
+plot(xx, P(xx), 'b--', 'LineWidth', 1.2);
+plot(x_nodes, y_nodes, 'ro', 'MarkerSize', 8, 'MarkerFaceColor', 'r');      % узлы
+plot(x_j, f(x_j), 'gs', 'MarkerSize', 8, 'MarkerFaceColor', 'g');           % точки погрешности
+plot(x_j, P(x_j), 'gs', 'MarkerSize', 8);
 grid on;
-legend('f(x)', 'P_3(x)', 'Узлы', 'Location', 'best');
 xlabel('x'); ylabel('y');
-
-
-
-
+legend('f(x)', 'P_3(x)', 'Узлы интерполяции', 'Точки погрешности', 'Location', 'best');
+title('Интерполяция многочленом Ньютона (равномерная сетка)');
+hold off;

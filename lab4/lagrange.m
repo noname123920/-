@@ -60,15 +60,26 @@ fprintf('-------------------------------------------------------------\n');
 
 
 
+##xx = linspace(a, b, 200);
+##figure;
+##plot(xx, f(xx), 'k-', xx, L(xx), 'b--', 'LineWidth', 1);
+##hold on;
+##plot(x_nodes, y_nodes, 'ro', 'MarkerSize', 5, 'LineWidth', 1);
+##hold off;
+##grid on;
+##legend('f(x)', 'L_3(x)', 'Узлы', 'Location', 'best');
+##xlabel('x'); ylabel('y');
+
+
 xx = linspace(a, b, 200);
 figure;
-plot(xx, f(xx), 'k-', xx, L(xx), 'b--', 'LineWidth', 1);
-hold on;
-plot(x_nodes, y_nodes, 'ro', 'MarkerSize', 5, 'LineWidth', 1);
-hold off;
+plot(xx, f(xx), 'k-', 'LineWidth', 1.2); hold on;
+plot(xx, L(xx), 'b--', 'LineWidth', 1.2);
+plot(x_nodes, y_nodes, 'ro', 'MarkerSize', 8, 'MarkerFaceColor', 'r');      % узлы
+plot(x_j, f(x_j), 'gs', 'MarkerSize', 8, 'MarkerFaceColor', 'g');           % точки погрешности на f(x)
+plot(x_j, L(x_j), 'gs', 'MarkerSize', 8);                                   % (опционально: на L(x) тоже)
 grid on;
-legend('f(x)', 'L_3(x)', 'Узлы', 'Location', 'best');
 xlabel('x'); ylabel('y');
-
-
-
+legend('f(x)', 'L_3(x)', 'Узлы интерполяции', 'Точки погрешности', 'Location', 'best');
+title('Интерполяция многочленом Лагранжа (равномерная сетка)');
+hold off;
