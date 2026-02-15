@@ -4,8 +4,6 @@ y = [14.1982, 11.4452, 9.1586, 7.2426, 6.3640, 4.8182, 6.1088, 3.9536, 4.6872, 4
 
 figure;
 
-% Группируем степени по 3-4 на subplot
-% Subplot 1: степени 1-4
 subplot(2,2,1);
 hold on;
 plot(x, y, 'ko', 'MarkerSize', 6, 'MarkerFaceColor', 'k');
@@ -19,7 +17,7 @@ legend show;
 grid on;
 hold off;
 
-% Subplot 2: степени 5-8
+
 subplot(2,2,2);
 hold on;
 plot(x, y, 'ko', 'MarkerSize', 6, 'MarkerFaceColor', 'k');
@@ -33,7 +31,7 @@ legend show;
 grid on;
 hold off;
 
-% Subplot 3: степени 9-12
+
 subplot(2,2,3);
 hold on;
 plot(x, y, 'ko', 'MarkerSize', 6, 'MarkerFaceColor', 'k');
@@ -47,7 +45,7 @@ legend show;
 grid on;
 hold off;
 
-% Subplot 4: степени 13-14
+
 subplot(2,2,4);
 hold on;
 plot(x, y, 'ko', 'MarkerSize', 6, 'MarkerFaceColor', 'k');

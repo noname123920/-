@@ -5,29 +5,22 @@ y = [14.1982, 11.4452, 9.1586, 7.2426, 6.3640, 4.8182, 6.1088, 3.9536, 4.6872, 4
 n = length(x);
 sigma = zeros(1, n);
 
-% Вычисляем СКО для всех степеней и выводим коэффициенты
 for m = 0:n-1
     p = polyfit(x, y, m);
     y_fit = polyval(p, x);
     sum_sq = sum((y_fit - y).^2);
     sigma(m+1) = sqrt(sum_sq / (n - m));
-
-    fprintf('\n Степень %d (СКО = %.6e) \n', m, sigma(m+1));
-    coeffs = fliplr(p);  % a0, a1, ..., am
-##    fprintf('Коэффициенты (от a0 до a%d):\n', m);
-##    disp(coeffs);
+    coeffs = fliplr(p);
 end
 
-% Находим оптимальную степень
+
 [min_sigma, r_index] = min(sigma);
 r = r_index - 1;
 
-% Получаем коэффициенты оптимального полинома
-p_opt = polyfit(x, y, r);
-coeffs_opt = fliplr(p_opt); % переворачиваем для a0, a1, ..., ar
 
-% Выводим результат
-fprintf('\nОПТИМАЛЬНАЯ СТЕПЕНЬ: r = %d\n', r);
+p_opt = polyfit(x, y, r);
+coeffs_opt = fliplr(p_opt);
+
 fprintf('МИНИМАЛЬНОЕ СКО = %.6e\n\n', min_sigma);
 fprintf('P_%d(x) = ', r);
 
