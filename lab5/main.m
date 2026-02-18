@@ -36,3 +36,60 @@ for i = 1:length(coeffs_opt)
     end
 end
 fprintf('\n');
+
+figure;
+
+subplot(2,2,1);
+hold on;
+plot(x, y, 'ko', 'MarkerSize', 6, 'MarkerFaceColor', 'k');
+for n = 1:4
+    p = polyfit(x, y, n);
+    y_fit = polyval(p, x);
+    plot(x, y_fit, 'LineWidth', 1.5, 'DisplayName', sprintf('n=%d', n));
+end
+title('Степени 1-4');
+legend show;
+grid on;
+hold off;
+
+
+subplot(2,2,2);
+hold on;
+plot(x, y, 'ko', 'MarkerSize', 6, 'MarkerFaceColor', 'k');
+for n = 5:8
+    p = polyfit(x, y, n);
+    y_fit = polyval(p, x);
+    plot(x, y_fit, 'LineWidth', 1.5, 'DisplayName', sprintf('n=%d', n));
+end
+title('Степени 5-8');
+legend show;
+grid on;
+hold off;
+
+
+subplot(2,2,3);
+hold on;
+plot(x, y, 'ko', 'MarkerSize', 6, 'MarkerFaceColor', 'k');
+for n = 9:12
+    p = polyfit(x, y, n);
+    y_fit = polyval(p, x);
+    plot(x, y_fit, 'LineWidth', 1.5, 'DisplayName', sprintf('n=%d', n));
+end
+title('Степени 9-12');
+legend show;
+grid on;
+hold off;
+
+
+subplot(2,2,4);
+hold on;
+plot(x, y, 'ko', 'MarkerSize', 6, 'MarkerFaceColor', 'k');
+for n = 13:14
+    p = polyfit(x, y, n);
+    y_fit = polyval(p, x);
+    plot(x, y_fit, 'LineWidth', 1.5, 'DisplayName', sprintf('n=%d', n));
+end
+title('Степени 13-14');
+legend show;
+grid on;
+hold off;

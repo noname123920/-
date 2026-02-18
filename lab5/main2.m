@@ -20,5 +20,26 @@ fprintf('y = %f * exp(%f * |x|)\n', a, b);
 
 
 
+x_fit = linspace(-1.5, 1.5, 500);
+y_fit = a .* exp(b .* abs(x_fit));
+
+figure;
+plot(x_fit, y_fit, 'b');
+hold on;
+plot(x, y, 'ro');
+xlabel('x');
+ylabel('y');
+
+
+grid on;
+hold off;
+
+
+
+
+
+
+
+
 
 
