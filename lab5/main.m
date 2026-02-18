@@ -24,17 +24,7 @@ coeffs_opt = fliplr(p_opt);
 fprintf('МИНИМАЛЬНОЕ СКО = %.6e\n\n', min_sigma);
 fprintf('P_%d(x) = ', r);
 
-for i = 1:length(coeffs_opt)
-    if i == 1
-        fprintf('%.6f', coeffs_opt(i));
-    else
-        if coeffs_opt(i) >= 0
-            fprintf(' + %.6f*x^%d', coeffs_opt(i), i-1);
-        else
-            fprintf(' - %.6f*x^%d', abs(coeffs_opt(i)), i-1);
-        end
-    end
-end
+disp(polyout(p_opt, 'x'));
 fprintf('\n');
 
 figure;
